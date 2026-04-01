@@ -3,35 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Capital MIC</title>
+    <title>Apex Capital Management Limited</title>
     <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-            color: #333;
+        :root {
+            --green-dark: #1b332d;
+            --green-mid: #243f38;
+            --green-light: #2d4d44;
+            --gold-dark: #AE8340;
+            --gold: #C6A369;
+            --gold-light: #D8B98A;
+            --gold-lighter: #EFC285;
+            --gold-lightest: #FDEBCD;
+            --white: #f5f2ed;
+            --white-muted: #c8c3bb;
         }
-        .container {
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--green-dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: var(--green-dark);
+            border-bottom: 1px solid var(--green-light);
+        }
+
+        .header-logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        nav a {
+            color: var(--gold-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--gold-lightest);
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 5% 5rem;
+            background: linear-gradient(180deg, var(--green-dark) 0%, var(--green-mid) 100%);
+        }
+
+        .hero-logo {
+            width: min(500px, 80vw);
+            height: auto;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+            margin-bottom: 2rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.15rem;
+            color: var(--white-muted);
+            letter-spacing: 0.06em;
+            max-width: 550px;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-rule {
+            width: 40px;
+            height: 2px;
+            background: var(--gold-dark);
+            margin-bottom: 2rem;
+        }
+
+        /* About */
+        .about {
+            background-color: var(--green-mid);
+        }
+
+        .about-content {
+            max-width: 700px;
+        }
+
+        .about-content p {
+            color: var(--white-muted);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        /* Services */
+        .services {
+            background-color: var(--green-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 1rem;
+            max-width: 960px;
+        }
+
+        .service-card {
+            border: 1px solid var(--green-light);
+            border-top: 2px solid var(--gold-dark);
+            padding: 2rem;
+            background-color: var(--green-mid);
+        }
+
+        .service-card h3 {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+
+        .service-card p {
+            color: var(--white-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Portal CTA */
+        .portal {
+            background-color: var(--green-mid);
             text-align: center;
         }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+
+        .portal-text {
+            color: var(--white-muted);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto 2rem;
         }
-        p {
-            font-size: 1.1rem;
-            color: #666;
+
+        .portal-btn {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            font-family: inherit;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .portal-btn:hover {
+            background-color: var(--gold);
+            color: var(--green-dark);
+        }
+
+        /* Contact */
+        .contact {
+            background-color: var(--green-dark);
+        }
+
+        .contact-content {
+            max-width: 500px;
+        }
+
+        .contact-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-label {
+            color: var(--gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            color: var(--white-muted);
+            font-size: 1rem;
+        }
+
+        .contact-value a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            color: var(--gold-lightest);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            border-top: 1px solid var(--green-light);
+            background-color: var(--green-dark);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-license {
+            color: var(--white-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-copy {
+            color: var(--white-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 5% 3.5rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Apex Capital MIC</h1>
-        <p>Site coming soon.</p>
-    </div>
+
+    <header>
+        <div class="header-logo">
+            <img src="assets/apex-capital-logo.svg" alt="Apex Capital Management Limited">
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portal">Portal</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img class="hero-logo" src="assets/apex-capital-logo.svg" alt="Apex Capital Management Limited">
+        <div class="hero-divider"></div>
+        <p class="hero-tagline">Private mortgage lending and investment solutions in Ontario.</p>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="section-rule"></div>
+        <div class="about-content">
+            <p>Apex Capital Management Limited is a licensed Mortgage Investment Corporation serving borrowers and investors across Ontario.</p>
+            <p>We provide flexible private mortgage lending solutions backed by real estate, offering an alternative to traditional financing for borrowers and attractive risk-adjusted returns for investors.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">What We Do</h2>
+        <div class="section-rule"></div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Private Mortgage Lending</h3>
+                <p>Flexible short-term mortgage solutions for residential and commercial properties, with efficient underwriting and fast funding.</p>
+            </div>
+            <div class="service-card">
+                <h3>Investment Opportunities</h3>
+                <p>Access to a diversified portfolio of mortgage investments secured by Ontario real estate, offering competitive yields.</p>
+            </div>
+            <div class="service-card">
+                <h3>Broker Partnerships</h3>
+                <p>Working closely with mortgage brokers to deliver timely financing solutions for their clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portal" id="portal">
+        <h2 class="section-title">Client Portal</h2>
+        <div class="section-rule" style="margin-left: auto; margin-right: auto;"></div>
+        <p class="portal-text">Access your account, review loan details, or manage your investments through our secure online portal.</p>
+        <a class="portal-btn" href="#" aria-label="Access client portal">Coming Soon</a>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="section-rule"></div>
+        <div class="contact-content">
+            <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <div class="contact-value"><a href="mailto:info@apexcapitalmic.ca">info@apexcapitalmic.ca</a></div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Website</div>
+                <div class="contact-value"><a href="https://apexcapitalmic.ca">apexcapitalmic.ca</a></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-license">Admin License #13802 &middot; Brokerage #13700</div>
+        <div class="footer-copy">&copy; 2026 Apex Capital Management Limited</div>
+    </footer>
+
 </body>
 </html>
