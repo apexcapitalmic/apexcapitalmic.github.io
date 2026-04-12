@@ -189,6 +189,55 @@
             color: var(--green-dark);
         }
 
+        /* Redemption */
+        .redemption {
+            background-color: var(--green-dark);
+        }
+
+        .redemption-content {
+            max-width: 700px;
+        }
+
+        .redemption-content p {
+            color: var(--white-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .redemption-content a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .redemption-content a:hover {
+            color: var(--gold-lightest);
+        }
+
+        .redemption-downloads {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .redemption-downloads a {
+            display: inline-block;
+            padding: 0.7rem 1.8rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            font-family: inherit;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .redemption-downloads a:hover {
+            background-color: var(--gold);
+            color: var(--green-dark);
+        }
+
         /* Contact */
         .contact {
             background-color: var(--green-dark);
@@ -224,22 +273,65 @@
             color: var(--gold-lightest);
         }
 
+        /* Complaints */
+        .complaints {
+            background-color: var(--green-mid);
+            padding: 3rem 5%;
+        }
+
+        .complaints h3 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+        }
+
+        .complaints p {
+            color: var(--white-muted);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin-bottom: 0.8rem;
+        }
+
+        .complaints a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .complaints a:hover {
+            color: var(--gold-lightest);
+        }
+
         /* Footer */
         footer {
-            padding: 2rem 5%;
+            padding: 2.5rem 5% 2rem;
             border-top: 1px solid var(--green-light);
             background-color: var(--green-dark);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
+            text-align: center;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+
+        .footer-blurb {
+            color: var(--white-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .footer-license {
             color: var(--white-muted);
             font-size: 0.8rem;
             letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
         }
 
         .footer-copy {
@@ -284,6 +376,7 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#portal">Portal</a>
+            <a href="#redemption">Redemption</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -298,7 +391,7 @@
         <h2 class="section-title">About Us</h2>
         <div class="section-rule"></div>
         <div class="about-content">
-            <p>Apex Capital Management Limited is a licensed Mortgage Investment Corporation serving borrowers and investors across Ontario.</p>
+            <p>Apex Capital Management Limited is a licensed mortgage administrator for Apex Mortgage Investment Corporation serving borrowers and investors across GTA.</p>
             <p>We provide flexible private mortgage lending solutions backed by real estate, offering an alternative to traditional financing for borrowers and attractive risk-adjusted returns for investors.</p>
         </div>
     </section>
@@ -329,23 +422,50 @@
         <a class="portal-btn" href="#" aria-label="Access client portal">Coming Soon</a>
     </section>
 
+    <section class="redemption" id="redemption">
+        <h2 class="section-title">Investment Redemption</h2>
+        <div class="section-rule"></div>
+        <div class="redemption-content">
+            <p>Please email your completed redemption or partial redemption form to <a href="mailto:Management@apexcapitalmgt.ca">Management@apexcapitalmgt.ca</a>.</p>
+            <div class="redemption-downloads">
+                <a href="assets/Apex Capital Redemption Form.pdf" download>Redemption Form</a>
+                <a href="assets/Apex Capital partial redemption form.pdf" download>Partial Redemption Form</a>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <h2 class="section-title">Contact</h2>
         <div class="section-rule"></div>
         <div class="contact-content">
             <div class="contact-item">
                 <div class="contact-label">Email</div>
-                <div class="contact-value"><a href="mailto:info@apexcapitalmic.ca">info@apexcapitalmic.ca</a></div>
+                <div class="contact-value"><a href="mailto:Management@apexcapitalmgt.ca">Management@apexcapitalmgt.ca</a></div>
             </div>
             <div class="contact-item">
-                <div class="contact-label">Website</div>
-                <div class="contact-value"><a href="https://apexcapitalmic.ca">apexcapitalmic.ca</a></div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value"><a href="tel:4162318075">416-231-8075</a></div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Office</div>
+                <div class="contact-value">3044 Bloor Street West, Etobicoke ON M8X 1C4</div>
             </div>
         </div>
     </section>
 
+    <section class="complaints">
+        <h3>Complaints Process</h3>
+        <p>You can file a complaint with us and we will respond within 5 business days.</p>
+        <p>Via Mail: Apex Capital Management LTD, 3044 Bloor Street West, Etobicoke ON M8X 1C4</p>
+        <p>Via Email: <a href="mailto:Management@apexcapitalmgt.ca">Management@apexcapitalmgt.ca</a></p>
+        <p>You can contact FSRA at <a href="mailto:contactcentre@fsrao.ca">contactcentre@fsrao.ca</a> and review their <a href="https://www.fsrao.ca/submit-complaint-fsra" target="_blank" rel="noopener">complaint guide</a>.</p>
+    </section>
+
     <footer>
-        <div class="footer-license">Admin License #13802 &middot; Brokerage #13700</div>
+        <div class="footer-logo">
+            <img src="assets/apex-capital-logo.svg" alt="Apex Capital Management Limited">
+        </div>
+        <div class="footer-blurb">Apex Capital Management is a licensed mortgage administrator for Apex MIC. FSRA 13802</div>
         <div class="footer-copy">&copy; 2026 Apex Capital Management Limited</div>
     </footer>
 
